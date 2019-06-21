@@ -1,5 +1,5 @@
 
-# %%
+#%%
 import os.path as path
 import numpy as np
 import pandas as pd
@@ -21,10 +21,7 @@ pyber_df = pd.merge(city_df, ride_df, on="city", how="inner")
 # Display the data table for preview
 pyber_df.head()
 
-# %%
-# city_driver_list = pyber_df.groupby(["city"]).median()\
-#     .index.get_level_values("city").tolist()
-
+#%%
 averages_df = pyber_df.groupby(["city"], as_index=False).mean()
 
 averages_df["ride_count"] = pyber_df.groupby(["city"])\
@@ -46,10 +43,10 @@ averages_df["fare"] = averages_df["fare"].round(2)
 
 averages_df.head()
 
-# %% [markdown]
+#%% [markdown]
 # ## Bubble Plot of Ride Sharing Data
 
-# %%
+#%%
 # Obtain the x and y coordinates for each of the three city types
 x = averages_df["driver_count"]
 y = averages_df["fare"]
@@ -69,14 +66,14 @@ plt.show()
 # Save Figure
 
 
-# %%
+#%%
 # Show plot
 plt.show()
 
-# %% [markdown]
+#%% [markdown]
 # ## Total Fares by City Type
 
-# %%
+#%%
 # Calculate Type Percents
 
 # Build Pie Chart
@@ -84,14 +81,14 @@ plt.show()
 # Save Figure
 
 
-# %%
+#%%
 # Show Figure
 plt.show()
 
-# %% [markdown]
+#%% [markdown]
 # ## Total Rides by City Type
 
-# %%
+#%%
 # Calculate Ride Percents
 
 # Build Pie Chart
@@ -99,14 +96,14 @@ plt.show()
 # Save Figure
 
 
-# %%
+#%%
 # Show Figure
 plt.show()
 
-# %% [markdown]
+#%% [markdown]
 # ## Total Drivers by City Type
 
-# %%
+#%%
 # Calculate Driver Percents
 
 # Build Pie Charts
@@ -114,9 +111,9 @@ plt.show()
 # Save Figure
 
 
-# %%
+#%%
 # Show Figure
 plt.show()
 
 
-# %%
+#%%
