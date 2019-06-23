@@ -52,26 +52,27 @@ x = averages_df["driver_count"]
 y = averages_df["fare"]
 s = [n**2 for n in averages_df["ride_count"]]
 city_pop = averages_df["city_type"]
-colors = [[255, 0, 0], [0, 255, 0], [0, 0, 255]]
 # Build the scatter plots for each city types
-plt.scatter(x, y, s=s, c=city_pop, alpha=0.4, cmap="tab10")
-plt.show()
+
 
 # Incorporate the other graph properties
 
 # Create a legend
+# plt.legend(handles=1, loc=[1.05, 0])
 
 # Incorporate a text label regarding circle size
+# plt.labels("Bigger circle = more fares")
+plt.xlabel("Number of fares per city")
+plt.ylabel("Income per city")
 
 # Save Figure
-
-
-#%%
-# Show plot
+plt.scatter(x, y, s=s, c=city_pop, alpha=0.4, cmap="tab10")
+plt.savefig("bubble.png")
 plt.show()
 
 #%% [markdown]
 # ## Total Fares by City Type
+
 
 #%%
 # Calculate Type Percents
